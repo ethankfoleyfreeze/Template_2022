@@ -3,6 +3,7 @@ package frc.robot.Inputs;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Util.Util;
 
 public class Inputs extends SubsystemBase{
 
@@ -44,7 +45,9 @@ public class Inputs extends SubsystemBase{
             }
 
             if(cals.DEBUG){
-                System.out.println("Joystick Name: " + name + "   Has FlySky: " + hasFlySky + "   Has Game Pad: " + hasGamePad);
+                Util.logString(1, false, true, "Joystick Name", name);
+                Util.logBool(1, false, true, "Has Flysky", hasFlySky);
+                Util.logBool(1, false, true, "Has Gamepad", hasGamePad);
             }
 
             time = Timer.getFPGATimestamp() + cals.JOYSTICK_CHECK_INTERVAL;
