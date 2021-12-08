@@ -45,9 +45,9 @@ public class Inputs extends SubsystemBase{
             }
 
             if(cals.DEBUG){
-                Util.logString(1, false, true, "Joystick Name", name);
-                Util.logBool(1, false, true, "Has Flysky", hasFlySky);
-                Util.logBool(1, false, true, "Has Gamepad", hasGamePad);
+                Util.logString(Util.LOG_GROUPS.INPUTS, 1, false, true, "Joystick Name", name);
+                Util.logBool(Util.LOG_GROUPS.INPUTS, 1, false, true, "Has Flysky", hasFlySky);
+                Util.logBool(Util.LOG_GROUPS.INPUTS, 1, false, true, "Has Gamepad", hasGamePad);
             }
 
             time = Timer.getFPGATimestamp() + cals.JOYSTICK_CHECK_INTERVAL;
