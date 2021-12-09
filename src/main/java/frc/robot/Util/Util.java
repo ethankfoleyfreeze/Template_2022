@@ -4,8 +4,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Util {
 
-    public static final int PRINT_SEVERITY = 4;
-
     public static enum LOG_GROUPS {
         DRIVE, INPUTS, INTAKE, SCORING, TRANSPORT, VISION
     }
@@ -19,9 +17,7 @@ public class Util {
 
         int enumPos = group.ordinal();//finds at what position "group" is found in the LOG_GROUPS enum
 
-        if(level == 0 || level > PRINT_SEVERITY || PRINT_SEVERITY == 0 || LOG_VALUES[enumPos] < level || LOG_VALUES[enumPos] == 0){
-            return;
-        }else{
+        if(level <= LOG_VALUES[enumPos]){
             if(smartDashboard){
                 SmartDashboard.putBoolean(keyName, value);
             }
@@ -35,9 +31,7 @@ public class Util {
 
         int enumPos = group.ordinal();//finds at what position "group" is found in the LOG_GROUPS enum
 
-        if(level == 0 || level > PRINT_SEVERITY || PRINT_SEVERITY == 0 || LOG_VALUES[enumPos] < level || LOG_VALUES[enumPos] == 0){
-            return;
-        }else{
+        if(level <= LOG_VALUES[enumPos]){
             if(smartDashboard){
                 SmartDashboard.putNumber(keyName, value);
             }
@@ -51,9 +45,7 @@ public class Util {
 
         int enumPos = group.ordinal();//finds at what position "group" is found in the LOG_GROUPS enum
 
-        if(level == 0 || level > PRINT_SEVERITY || PRINT_SEVERITY == 0 || LOG_VALUES[enumPos] < level || LOG_VALUES[enumPos] == 0){
-            return;
-        }else{
+        if(level <= LOG_VALUES[enumPos]){
             if(smartDashboard){
                 SmartDashboard.putString(keyName, value);
             }
